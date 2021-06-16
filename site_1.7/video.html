@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Solta-Língua</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script src="js/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style type="text/css">
+      select, input, select option{
+      color: black;
+      }
+      .btn_enviar_video{
+      margin-top: 2.5%;
+      margin-left: 5.5%
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fixed-action-btn toolbar">
+      <a class="btn-floating btn-large deep-purple">
+        <i class="large material-icons">menu_open</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating tooltipped" data-position="top" href="pacientes.html" data-tooltip="Pagina Inicial"><i class="material-icons">home</i></a></li>
+        <li><a class="btn-floating tooltipped" data-position="top" href="consultas.html" data-tooltip="Notas do Pacientes"><i class="material-icons">assignment</i></a></li>
+        <li><a class="btn-floating tooltipped" data-position="top" href="video.html" data-tooltip="Atividades e Videos"><i class="material-icons">list_alt</i></a></li>
+        <li><a class="btn-floating tooltipped" data-position="top" href="cadastrar_paciente.html" data-tooltip="Cadastrar Paciente"><i class="material-icons">person_add</i></a></li>
+      </ul>
+    </div>
+    <!-- <nav id="principal_nav">
+      <div class="nav-wrapper deep-purple" id="sub" >
+        <div class="row">
+          <a  target="_Blanck" class="brand-logo center"><h4 class="solta">Solta-Língua</h4></a>
+        </div>
+      </div> 
+    </nav> -->
+    <ul class="sidenav ul" id="mobile-demo" >
+      <li><a href="pacientes.html">Pacientes</a></li>
+      <li><a href="#!" id="cadastrar_paciente" class="pagina">Cadastrar Paciente</a></li>
+    </ul>
+    <ul class="collapsible popout">
+      <li class=" collection-item avatar white active" style='border-radius: 25px; margin-top: 20px;width: 95%;margin-left: 2%'>
+        <div class="collapsible-header white collection-item " style='border-radius: 25px;width: 100%'><i class="material-icons large ">movie_creation</i>Envio de Atividades de Video</div>
+        <div class="collapsible-body">
+          <div class="input-field col s12 container">
+            <select  multiple id="escolha_video">
+              <option value="" disabled selected>Selecione as opções</option>
+              <option value="1">Auxílio de Video</option>
+              <option value="2">Prática de Video</option>
+            </select>
+            <label class="black-text">Método de envio da atividade</label>
+          </div>
+          <div class="container">
+            <div id="sumir">
+              <div class="row" id="video">
+                <form class="col s12 l12" method="post" action="php/upload_video.php" enctype='multipart/form-data'>
+                  <div class="row">
+                    <div class="col s12 l12" id="atividade_envia_video">
+                      <div class="col s6 l6" id="envia_video">
+                        <div class="input-field col s12 l12">
+                          <i class="material-icons prefix">movie_creation</i>
+                          <input id="nm_link" name="nm_link" type="text" class="validate" value="nome">
+                          <label for="nm_link" class="black-text">Nome do Video</label>
+                        </div>
+                        <p>
+                          <label>
+                            <input name="video" value="0" type="radio" checked />
+                            <span class="black-text">Video do Youtube</span>
+                          </label>
+                          <label>
+                            <input name="video" value="1" type="radio" />
+                            <span class="black-text">Upload do Video</span>
+                          </label>
+                        </p>
+                        <div class="input-field col s12 l12 url_link">
+                          <i class="material-icons prefix">movie_filter</i>
+                          <input id="url_link" name="url_link" type="text" class="validate url_video" value="link">
+                          <label for="url_link"  class="black-text">Link  do Video</label>
+                        </div>
+                        <div class="file-field input-field  col s12 l12 txt_arquivo url_file" style="display: none">
+                            <div class="file-path-wrapper txt_arquivo">
+                              <i class="material-icons prefix">cloud_upload</i>
+                              <input type="file" id="url_file" class="url_video" name="file">
+                              <label for="url_file" class="black-text">Upload do Video</label>
+                              <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                      </div>
+                      <div class="input-field col s12 l6 dt_entrega">
+                        <i class="material-icons prefix">date_range</i>
+                        <input id="dt_entrega" type="text" class="datepicker validate" value="2019-12-10">
+                        <label for="dt_entrega" class="black-text">Data para Entrega</label>
+                      </div>
+                      <div class="input-field col s12 l6 hr_entrega">
+                        <i class="material-icons prefix">access_time</i>
+                        <input type="text" class="timepicker" id="hr_entrega" name="hr_entrega" value="03:44 PM">
+                        <label for="hr_entrega" class="active black-text">Hora de Entrega</label> 
+                      </div>
+                      <input type='submit' value='Enviar' name='but_upload' class="btn-small waves-effect waves-light right deep-purple button col s12 l5 btn_atividade_envia_video btn_enviar_video">
+                      
+                    </div>
+                    <div class="col s12 l12" id="atividade_recebe_video"  style="display: none">
+                      <div class="input-field col s12 l6 recebe_video">
+                        <i class="material-icons prefix">movie_creation</i>
+                        <input id="nm_atv" name="nm_atv" type="text" class="validate" value="video">
+                        <label for="nm_atv" class="black-text">Nome da Atividade</label>
+                      </div>
+                      <div class="input-field col s12 l6 recebe_video">
+                        <i class="material-icons prefix">movie_filter</i>
+                        <input id="ds_instr" name="ds_instr" type="text" class="validate" value="instrucao">
+                        <label for="ds_instr" class="black-text">Instrucao da atividade</label>
+                      </div>
+                      <div class="input-field col s12 l6">
+                        <i class="material-icons prefix">date_range</i>
+                        <input id="dt_entrega" type="text" class="datepicker validate" value="2019-12-10">
+                        <label for="dt_entrega" class="black-text">Data para Entrega</label>
+                      </div>
+                      <div class="input-field col s12 l6">
+                        <i class="material-icons prefix">access_time</i>
+                        <input type="text" class="timepicker" id="hr_entrega" name="txt_hora_palavra" value="03:44 PM">
+                        <label for="hr_entrega" class="active black-text">Hora de Entrega</label> 
+                      </div>
+
+                      <button class="btn-small waves-effect waves-light right deep-purple button col s12 l5 btn_atividade_recebe_video btn_enviar_video" type="button" name="action">Enviar<i class="material-icons right">send</i></button> 
+                    </div>
+                    <button class="btn-small waves-effect waves-light right deep-purple button col s12 l5 btn_atividade_envia_recebe_video btn_enviar_video" type="button" name="action" style="display: none">Enviar<i class="material-icons right">send</i></button> 
+                  </div>
+                </form>
+              </div>
+              <div class="carousel" id="c_video" style="display: none"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="white collection-item" style='border-radius: 25px; margin-top: 20px;width: 95%;margin-left: 2%'>
+        <div class="collapsible-header white collection-item black-text" style='border-radius: 25px;width: 100%;'><i class="material-icons large">keyboard_voice</i>Envio de Atividades de Audio</div>
+        <div class="collapsible-body">
+          <div class="container">
+            <div id="sumir">
+              <div class="row" id="video">
+                <form class="col s12 l12" method="post">
+                <div class="row">
+                  <div class="input-field col s12 l12">
+                    <i class="material-icons prefix">label</i>
+                    <input type="text" id="txt_nome_palavra" name="txt_nome_palavra" value="Palavras">
+                    <label for="txt_nome_palavra" class="active black-text">Nome da Atividade</label>  
+                  </div>
+                  <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">date_range</i>
+                    <input type="text" class="datepicker" id="txt_data_palavra" name="txt_data_palavra" value="Nov 29, 2019">
+                    <label for="txt_data_palavra" class="active black-text">Data de Entrega</label>  
+                  </div>
+                  <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">access_time</i>
+                    <input type="text" class="timepicker" id="txt_hora_palavra" name="txt_hora_palavra" value="03:44 PM">
+                    <label for="txt_hora_palavra" class="active black-text">Hora de Entrega</label> 
+                  </div>
+                  <div class="input-field col s12 l12">
+                    <i class="material-icons prefix">library_books</i>
+                    <div class="chips chips-placeholder " id="chip1">
+                      <input class="custom-class" id="myInputField" name="myInputField" >
+                    </div>    
+                    <label for="myInputField" class="active black-text">Insira as Palavras</label>
+                  </div>
+                  <button class="btn-small waves-effect waves-light right deep-purple button col s12 l5" id="btn_enviar_palavras" type="button" name="action">Enviar<i class="material-icons right">send</i></button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </li>
+    </ul>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.collapsible').collapsible();
+      });    
+    </script>
+  </body>
+</html>

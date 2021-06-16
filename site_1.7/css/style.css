@@ -1,0 +1,224 @@
+#imgleft
+      {
+        margin-left: 45%; 
+        margin-top: 8.5%;
+        float: left;
+        background: white;
+        width: 150px;
+        height: 150px;
+        border: 5px solid #B3E7E9;
+        border-radius: 75px;
+      }
+html
+{
+  height: 100%
+}
+body
+{
+  height: 100%;
+  background-color: #CAF8FA;
+  margin: 0;
+}
+.solta
+{
+  font-family: Cooper Black;
+  margin: 0;
+  margin-top: 5%;
+  color: #b3e5fc;
+}
+#principal_nav
+{
+  border-radius: 0 0 15px 15px;
+}
+#sub
+{
+  border-radius: 0 0 15px 15px;
+}
+#row_card
+{
+  border-radius: 15px;
+  margin-top: 12.5%;
+  margin-left: 23%;
+  clear: left;
+}
+
+#menuS
+{
+  margin: 0;
+  background: white;
+  height: 1000px;
+  width: 25%;
+  float: left;
+  margin: -3.5% 0;
+  background: #CAF8FA;
+  border-right: solid 5px #40c4ff;
+  position: fixed;
+}
+#card
+{
+  border-radius: 15px;
+  background: #FCFFFF;
+    height: 300px;
+}
+#btn_logar
+{
+  margin-right: -3%;
+  margin-top: 5%
+}
+
+#btn_logar:hover
+{
+  background-color: #4DDA45;
+}
+
+#video
+{
+  margin-top: 5%;
+}
+
+#paciente
+{
+  border: none;
+  margin-left: 23%;
+}
+.form
+{
+  height: auto
+}
+
+
+.button
+        {
+          border-radius: 15px;
+          background: #007373;
+        }
+#Solta
+        {
+          margin-top: -10px
+        }
+#search
+        {
+          height: 40px;
+          margin-top: 10px;
+        }
+.cadastro
+        {
+          display: none;
+        }
+.i_sexo
+        {
+           float: left;font-size: 40px;
+           margin-left: -5px
+        }
+.i_nascimento
+        {
+           float: left;font-size: 40px;
+           margin-left: -5px
+        }
+.i_escolaridade
+        {
+           float: left;font-size: 40px;
+           margin-left: -5px
+        }
+.i_atividades
+        {
+          font-size: 40px
+        }
+.i_escola
+        {
+          font-size: 40px
+        }
+.i_periodo
+        {
+          float: left;
+          font-size: 40px;
+          margin-left: -5px;
+        }
+.form_autoriza
+        {
+           text-align: center;
+        }
+.span_autoriza
+        {
+          color: black
+        }
+#listas
+        {
+         display: none;
+        }
+.div_first
+        {
+          margin: 0
+        }
+.determinate
+        {
+          width: 70% 
+        }
+.tamanho
+        {
+          font-size: 30px;
+        } 
+#txt_data
+        {
+          width: 86%;
+          margin-left: 10px
+        }
+
+
+@media only screen and (min-width: 340px) and (max-width: 740px) 
+{
+     #imgleft{margin-top: 8.5%;margin-left: 30%}
+  #pNome{width: 75%;margin-left: 10%;margin-top: 2%}
+  #sNome{width: 75%;margin-left: 10%;margin-top: 2%}
+  #data{width: 80%}
+  #medicamento{margin-left: 15px;margin-top: -15px}
+  .tamanho{font-size: 30px;}
+  .solta{font-size: 27px;margin-top: 8%}
+  .button{margin-top: 2%}
+  #row_card
+  {
+      margin-top: 15%;
+      margin-left: 0.5%;
+  } 
+
+}
+
+
+@media only screen and  (min-width: 741px) and (max-width: 1024px)
+{
+     
+  #logo{margin-left: -20%}
+  #data{width: 90%}
+#data
+    {
+      width: 85%
+    } 
+#Solta 
+     {
+        margin-left: -300px;
+        margin-top: -15px
+     }
+#search
+      {
+        width: 185px
+      }
+.tamanho
+      {
+        font-size: 30px;
+      } 
+.logo
+      {
+        margin-left: -200px;
+      }
+}
+
+.container
+      {
+        width: 90%
+      }
+.lixo
+      {
+        font-size: 40px
+      }
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+      <title>Solta-Língua</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+       <script src="js/jquery.js"></script>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+
+      <script type="text/javascript" src="js/script.js"></script>
+
+    
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+          google.charts.setOnLoadCallback(evolucao);
+      </script>
+    
+      <style type="text/css">
+      #btn_nota
+        {
+          margin-top: 2.2%;
+          margin-left: 5.5%
+        }
+</style>
+
+</head>
+<body>
+
+<div class="fixed-action-btn toolbar">
+  <a class="btn-floating btn-large deep-purple">
+    <i class="large material-icons">menu_open</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating tooltipped" data-position="top" href="pacientes.html" data-tooltip="Pagina Inicial"><i class="material-icons">home</i></a></li>
+    <li><a class="btn-floating tooltipped" data-position="top" href="consultas.html" data-tooltip="Notas do Pacientes"><i class="material-icons">assignment</i></a></li>
+    <li><a class="btn-floating tooltipped" data-position="top" href="video.html" data-tooltip="Atividades e Videos"><i class="material-icons">list_alt</i></a></li>
+      <li><a class="btn-floating tooltipped" data-position="top" href="cadastrar_paciente.html" data-tooltip="Cadastrar Paciente"><i class="material-icons">person_add</i></a></li>
+  </ul>
+
+ 
+</div>
+
+  <div class="container">
+
+    <div id="sumir">
+
+      <div class="row" style="margin-top: 5%">
+    <form class="col s12 l12" method="post">
+      <div class="row">
+        
+      <div class="input-field col s10 l4">
+        <select id="txt_exercicio">
+          <option value="0" disabled selected>Nenhum selecionado</option>
+              <option class="val" value="1">Treino de Dicção (Fonemas "u" e "i")</option> 
+              <option class="val" value="2">Treino de Dicção (hummmm)</option>
+              <option class="val" value="3">Treino de Dicção (Trava Língua)</option>
+        </select>
+      <label>Nome do Exercicio</label>
+      <i class="material-icons prefix tooltipped" data-position="bottom" data-tooltip="Buscar por Exercicio" style="cursor: pointer;margin-left: 98%" id="atv">search</i>
+  </div>
+   
+     
+        
+        <div class="input-field col s12 l4" style="margin-left: 5%">
+          <i class="material-icons prefix">note_add</i>
+          <input id="txt_nota" name="nota" type="number" class="validate">
+          <label for="txt_nota">Nota</label>
+        </div>
+
+
+
+        <button class="btn waves-effect waves-light" type="button" name="action" id="btn_nota">Enviar
+          <i class="material-icons right">send</i>
+        </button>
+
+        <div class="input-field col s12 l12">
+          <textarea id="obs" class="materialize-textarea" name="obs"></textarea>
+          <label for="obs">Anotação da Consulta (Não irá intervir para gerar a evolução apenas observação)</label>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+
+     <h4 style="text-align: center;">Evolução da Consulta</h4>
+     <table class="striped centered responsive-table" style="margin-top: 5%">
+        <thead>
+          <tr>
+              <th>Data/Hora</th>
+              <th>Exercício</th>
+              <th>Nota</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabela">
+          
+        </tbody>
+      </table>
+
+      <div id="curve_chart" style="width: auto;height: 485px; margin-top: 2%"></div>
+
+      <div id="evolucao"style="width: auto;height: 485px; margin-top: 2%;display: none;"></div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>

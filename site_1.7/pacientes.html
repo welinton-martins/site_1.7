@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+      <title>Solta-Língua</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+       <script src="js/jquery.js"></script>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+
+      <script type="text/javascript" src="js/script.js"></script>
+    
+</head>
+<body>
+
+  <div class="fixed-action-btn toolbar">
+  <a class="btn-floating btn-large deep-purple">
+    <i class="large material-icons">menu_open</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating tooltipped" data-position="top" href="pacientes.html" data-tooltip="Pagina Inicial"><i class="material-icons">home</i></a></li>
+    <li><a class="btn-floating tooltipped" data-position="top" href="consultas.html" data-tooltip="Notas do Pacientes"><i class="material-icons">assignment</i></a></li>
+    <li><a class="btn-floating tooltipped" data-position="top" href="video.html" data-tooltip="Atividades e Videos"><i class="material-icons">list_alt</i></a></li>
+      <li><a class="btn-floating tooltipped" data-position="top" href="cadastrar_paciente.html" data-tooltip="Cadastrar Paciente"><i class="material-icons">person_add</i></a></li>
+  </ul>
+
+ 
+</div>
+
+
+  <div id="menuS" class="deep-purple" style='position: fixed'>
+
+    <li><div class="user-view" >
+   
+
+      <div class="background" >
+        <img src="img/fundo.jpg" width="100%" height="250px" style="float: left;">
+
+        <a href="upload.html" id="foto"><img src="img/perfil.png" class='material-icons circle black' style="margin-top: -20%;margin-left: 33%;width: 125px;height: 125px"></a>
+      
+      
+      </div>
+    </div>
+  <a href="#name"  style="margin-left: 5%"><span class="white-text name"  style="font-family: arial black" id="nome"></span></a><br>
+      <a href="#email" style="margin-left: 5%"><span class="white-text email" id="email" style="font-family: arial black"></span></a>
+  </li>
+
+
+   
+
+  </div>
+
+
+
+
+  <div class="container">
+
+    <div id="sumir">
+
+     <strong><h3 class="center" style="font-family: cooper black">Pacientes</h3></strong>
+
+
+  <nav style="border-radius: 25px;width: 77%;margin-left: 23%">
+    <div class="nav-wrapper light-blue lighten-1" style="border-radius: 25px; ">
+      <form>
+        <div class="input-field col s12" >
+          <input id="search" type="search" required style="width: 94%;height: 65px;border-radius: 25px;">
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons" id="busca">send</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+
+        <ul class="collection" id="paciente">
+    
+        </ul>
+    
+ 
+    </div>
+  </div>
+
+  
+
+</body>
+</html>
+
+   
+ 
